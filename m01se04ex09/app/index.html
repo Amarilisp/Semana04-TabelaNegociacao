@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Formulário de Cadastro de Negociações</title>
+  </head>
+
+  <body>
+    <h1>Formulário de Cadastro de Negociações</h1>
+
+    <form>
+      <div>
+        <label> Data da negociação: </label>
+        <input type="date" id="data" class="input" />
+      </div>
+
+      <div>
+        <label> Quantidade de ações vendidas: </label>
+        <input class="input" type="number" id="quantidade" min="01" max="100" />
+      </div>
+
+      <div>
+        <label> Valor da negociação: </label>
+        <input
+          class="input"
+          type="number"
+          id="valor"
+          min="0"
+          max="1000000"
+          pattern="[0-9]+([.][0-9]+)?"
+          step=".1"
+        />
+      </div>
+
+      <button type="submit" id="btnNegoc">Enviar</button>
+    </form>
+
+    <table>
+      <thead>
+        <th>Data da Negociação</th>
+        <th>Quantidade de Negociações</th>
+        <th>Valor da Negociação</th>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <div id="filtro">
+      <button id="filtrar-btn">Filtrar</button>
+      <input id="valorFiltro" type="number" placeholder="Acima de:.." />
+    </div>
+
+    <script src="./js/main/main.js" type="module"></script>
+  </body>
+</html>
